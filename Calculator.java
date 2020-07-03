@@ -125,7 +125,11 @@ public class Calculator extends JPanel implements ActionListener {
             String num = Integer.toString(numOne);
 
             if (num.length() > 1) {
-                numOne = Integer.parseInt(num.substring(0, num.length() - 1));
+                try {
+                    numOne = Integer.parseInt(num.substring(0, num.length() - 1));
+                } catch (Exception err) {
+                    numOne = 0;
+                }
             } else {
                 numOne = 0;
             }
